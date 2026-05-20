@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仙山我做主</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-header">
+            <div class="header-left">
+                <h1 class="game-title">🏔️ 仙山我做主</h1>
+                <span class="game-subtitle">种得仙葫镇山河</span>
+            </div>
+            <div class="header-right">
+                <div class="weather-info">
+                    <div class="weather-current" id="current-weather" title="当前天气">☀️ 晴朗</div>
+                    <div class="weather-forecast">
+                        <span class="forecast-label">明日</span>
+                        <span id="weather-forecast">⛅ 多云</span>
+                    </div>
+                </div>
+                <div class="resource">
+                    <span class="resource-icon">💎</span>
+                    <span id="spirit-stones">100</span>
+                </div>
+                <div class="resource">
+                    <span class="resource-icon">🌱</span>
+                    <span id="seed-count">3</span>
+                </div>
+                <div class="resource">
+                    <span class="resource-icon">💧</span>
+                    <span id="water-count">10</span>
+                </div>
+                <div class="resource">
+                    <span class="resource-icon">🧪</span>
+                    <span id="fertilizer-count">5</span>
+                </div>
+                <div class="day-counter">
+                    第 <span id="day-count">1</span> 天
+                </div>
+            </div>
+        </header>
+
+        <main id="game-main">
+            <aside id="left-panel">
+                <div class="panel-section">
+                    <h3 class="panel-title">🎒 葫芦背包</h3>
+                    <div id="inventory-list" class="item-list"></div>
+                </div>
+                <div class="panel-section">
+                    <h3 class="panel-title">🌱 种子库</h3>
+                    <div id="seed-list" class="item-list"></div>
+                </div>
+            </aside>
+
+            <section id="farm-area">
+                <div class="farm-header">
+                    <h2>仙山灵田</h2>
+                    <div class="farm-actions">
+                        <button id="btn-water-all" class="action-btn water-btn" title="全部浇水">💧 浇水</button>
+                        <button id="btn-harvest-all" class="action-btn harvest-btn" title="全部收获">✨ 收获</button>
+                        <button id="btn-next-day" class="action-btn day-btn" title="下一天">🌅 下一天</button>
+                    </div>
+                </div>
+                <div id="farm-canvas-container">
+                    <canvas id="farm-canvas"></canvas>
+                </div>
+            </section>
+
+            <aside id="right-panel">
+                <div class="panel-section">
+                    <h3 class="panel-title">🏪 仙市</h3>
+                    <div id="shop-list" class="item-list"></div>
+                </div>
+                <div class="panel-section">
+                    <h3 class="panel-title">📜 葫芦图鉴</h3>
+                    <div id="codex-list" class="item-list"></div>
+                </div>
+            </aside>
+        </main>
+
+        <div id="info-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+
+        <div id="toast-container"></div>
+
+        <footer id="game-footer">
+            <span>仙山我做主 v1.0 | 左键种植/浇水/施肥 | 右键查看详情 | 拖拽种子到灵田种植</span>
+        </footer>
+    </div>
+
+    <script src="js/canvas-renderer.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
